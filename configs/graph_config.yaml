@@ -1,0 +1,18 @@
+graph:
+  k_neighbors: 7
+  similarity_threshold: 0.80
+  undirected: true
+
+features:
+  columns: ['N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall']
+  target: 'label'
+
+paths:
+  raw_data: "data/raw/crop_recommendation.csv"
+  processed_data: "data/processed/crop_processed.csv"
+  graph_file: "data/graph/crop_graph.pt"
+  artifacts: "artifacts/"
+
+model:
+  num_classes: 22
+  hidden_channels: 64
