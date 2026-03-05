@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+streamlit
+requests
+pandas
+plotly
+torch
+torch-geometric
+scikit-learn
+joblib
+numpy
+pyyaml
