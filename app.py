@@ -1,5 +1,3 @@
-# app.py — Member 3: FastAPI Backend
-# Place this file at the ROOT of the project (same level as src/, artifacts/)
 # Run with: uvicorn app:app --reload --port 8000
 
 import os
@@ -60,13 +58,13 @@ print(f"✅ Models loaded · {len(CROP_CLASSES)} crops: {CROP_CLASSES}")
 
 # ── Pydantic schemas ───────────────────────────────────────────────────────────
 class SoilInput(BaseModel):
-    N:           float = Field(..., ge=0,   le=140,  description="Nitrogen (kg/ha)")
-    P:           float = Field(..., ge=5,   le=145,  description="Phosphorus (kg/ha)")
-    K:           float = Field(..., ge=5,   le=205,  description="Potassium (kg/ha)")
-    temperature: float = Field(..., ge=8,   le=44,   description="Temperature (°C)")
-    humidity:    float = Field(..., ge=14,  le=100,  description="Humidity (%)")
-    ph:          float = Field(..., ge=3.5, le=9.9,  description="pH level")
-    rainfall:    float = Field(..., ge=20,  le=300,  description="Rainfall (mm)")
+    N:           float = Field(..., ge=0,   le=140,  description="Nitrogen-kg/ha (0-140)")
+    P:           float = Field(..., ge=5,   le=145,  description="Phosphorus-kg/ha (5-145)")
+    K:           float = Field(..., ge=5,   le=205,  description="Potassium-kg/ha (5-205)")
+    temperature: float = Field(..., ge=8,   le=44,   description="Temperature-°C (8-44)")
+    humidity:    float = Field(..., ge=14,  le=100,  description="Humidity% (14-100)")
+    ph:          float = Field(..., ge=3.5, le=9.9,  description="pH level (3.5-9.9)")
+    rainfall:    float = Field(..., ge=20,  le=300,  description="Rainfall-mm (20-300)")
 
 class RobustnessRequest(BaseModel):
     input:   SoilInput
